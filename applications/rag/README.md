@@ -42,10 +42,11 @@ The following steps set up the cluster, inference server, pgvector CloudSQL inst
 
 1. `cd ai-on-gke/applications/rag`
 
-2. Edit `workloads.tfvars` to set your project ID, location, cluster name, and GCS bucket name. Additionally:
-    * (Required) Set `create_cluster = true` if you want a cluster to be created for you.
-    * (Recommended) Set `add_auth = true` to create a load balancer with IAP. Follow the [Enable IAP Service](https://github.com/GoogleCloudPlatform/ai-on-gke/blob/main/modules/jupyter/authentication/README.MD#enable_iap_service) instructions to set up IAP.
-    * (Optional) Choose a custom k8s namespace and service account to be used by the application.
+2. Edit `workloads.tfvars` to set your project ID, location, cluster name, and GCS bucket name. Optionally, make the following changes:
+    * Set `create_cluster = false` if you are using an existing cluster.
+    * (Recommended) Set `add_auth = true` to create a load balancer with IAP.
+        * Follow the [Enable IAP Service](https://github.com/GoogleCloudPlatform/ai-on-gke/blob/main/modules/jupyter/authentication/README.MD#enable_iap_service) instructions to set up IAP.
+    * Choose a custom k8s namespace and service account to be used by the application.
 
 3. Run `terraform init`
 
